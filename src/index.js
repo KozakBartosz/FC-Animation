@@ -15,6 +15,9 @@ import BezierEasing from 'bezier-easing';
 const easeFlip = BezierEasing(0.34, 1.4, 0.5, 1);
 const easeFlip2 = BezierEasing(0.34, 1.8, 0.5, 1);
 const easeOut = BezierEasing(0.1, 0.85, 0.31, 0.99);
+
+const timescale = 0.8;
+
 const glassLeft = trail('#Glass', [
     fromTo(
         {
@@ -22,7 +25,7 @@ const glassLeft = trail('#Glass', [
             x: val(150, 0, 'px'),
             opacity: val(0, 1)
         },
-        1600,
+        800 / timescale,
         easeFlip
     )
 ]);
@@ -32,53 +35,53 @@ const liquidLeft = trail('#liquid', [
         {
             rotate: val(-240, 0, 'deg')
         },
-        2000,
+        1000 / timescale,
         easeFlip
     )
 ]);
 const text1 = trail('#Front', [
-    delay(150),
+    delay(75 / timescale),
     fromTo(
         {
             x: val(50, 0, 'px'),
             opacity: val(0, 1)
         },
-        1800,
+        900 / timescale,
         easeFlip2
     )
 ]);
 const text2 = trail('#Cooking', [
-    delay(150),
+    delay(75 / timescale),
     fromTo(
         {
             x: val(50, 0, 'px'),
             opacity: val(0, 1)
         },
-        2000,
+        1000 / timescale,
         easeFlip2
     )
 ]);
 const text3 = trail('#dot', [
-    delay(500),
+    delay(250 / timescale),
     fromTo(
         {
             scale: val(0, 1),
             x: val(20, 0, 'px'),
             opacity: val(0, 1)
         },
-        1000,
+        500 / timescale,
         easeFlip2
     )
 ]);
 const bubbles = trail('#bubbles', [
-    delay(900),
+    delay(450 / timescale),
     fromTo(
         {
             opacity: val(0, 1),
             rotate: val(-25, 0, 'deg'),
             scale: val(0.6, 1)
         },
-        2000,
+        1000 / timescale,
         easeFlip
     )
 ]);
