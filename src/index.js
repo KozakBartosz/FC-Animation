@@ -30,9 +30,9 @@ const glassLeft = trail('#Glass', [
 const liquidLeft = trail('#liquid', [
     fromTo(
         {
-            rotate: val(-180, 0, 'deg')
+            rotate: val(-240, 0, 'deg')
         },
-        1800,
+        2000,
         easeFlip
     )
 ]);
@@ -63,9 +63,10 @@ const text3 = trail('#dot', [
     fromTo(
         {
             scale: val(0, 1),
+            x: val(20, 0, 'px'),
             opacity: val(0, 1)
         },
-        2000,
+        1000,
         easeFlip2
     )
 ]);
@@ -86,8 +87,10 @@ const animation = lightTrails(
 );
 
 animation.play();
-setTimeout(() => {
+
+document.getElementById('logo').onclick = () => {
+    animation.seek(0);
     animation.play();
-}, 300);
+};
 
 inspector(animation);
